@@ -243,10 +243,9 @@ a.button:hover {
 }
 
 #message_window .file_attachment {
-  background: #F0F0F0;
   color: #333;
   border-radius: 5px;
-  display: inline-block;
+  display: block;
   max-width: 75%;
 }
 

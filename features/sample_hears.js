@@ -19,10 +19,6 @@ module.exports = async function(controller) {
                 {
                     title: 'Search Movies',
                     payload: 'search',
-                },
-                {
-                    title: 'Nothing',
-                    payload: 'nothing',
                 }
             ]
         });
@@ -40,27 +36,36 @@ module.exports = async function(controller) {
 
     // use a function to match a condition in the message
     controller.hears(async (message) => message.text && message.text.toLowerCase() === 'search', ['message'], async (bot, message) => {
-
-
+        await bot.reply(message, {type: 'typing'});
+        setTimeout(async () => {
+            await bot.changeContext(message.reference);
             bot.reply(message, 'What is the name of the movie you would like to search for?', async function(response,bot) {
                 controller.hears('.*','message', async(bot, message) => {
 
                     await bot.reply(message, 'I am searching for information on ' + message.text);
                 
                 });
-              
-        })
+                
+                
+            })
+        }, 1000);
 
     controller.hears('.*','message', async(bot, message) => {
         const movie = message.text;
-        await bot.reply(message, 'Looking for information on the movie ' + movie);
+        await bot.reply(message, {type: 'typing'});
+        setTimeout(async () => {
+            await bot.changeContext(message.reference);
+            await bot.reply(message, 'Looking for information on the movie ' + movie);
         const fetchRequest = await fetch(`http://www.omdbapi.com/?t=${movie}&apikey=${apiKey}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 if (data.Response === 'True') {
+                    bot.reply(message, {type: 'typing'});
+                    setTimeout(async () => {
+                        await bot.changeContext(message.reference);
                     bot.reply(message, {
-                        text: `<h2>${data.Title} | ${data.Year} | ${data.Rated}</h2> <br> ${data.Plot} <br><br> ${data.Production} | ${data.Runtime} | ${data.Country} <br><br>`,
+                        text: `<h2>${data.Title} | ${data.Year} | ${data.Rated}</h2> <br> ${data.Plot} <br><br> ${data.Production} | ${data.Runtime} | ${data.Country}<br>`,
                         files: [
                           {
                             image: true,
@@ -69,6 +74,8 @@ module.exports = async function(controller) {
                           },
                         ],
                       });
+                    }, 1000);
+
                       bot.reply(message, {type: 'typing'});
                       setTimeout(async () => {
                         await bot.changeContext(message.reference);
@@ -92,7 +99,9 @@ module.exports = async function(controller) {
 
             })
             .catch(err => console.log(err))
+        }, 1000);
         });
+
     
     });
 
