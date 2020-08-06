@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.modal {
+  border: solid rgba(0, 0, 0, 0.5) 10px;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -20,6 +26,8 @@ body, html {
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding: 2rem;
+  max-height: 90vh;
 }
 
 .wrapper:after {
@@ -59,7 +67,7 @@ footer {
 }
 
 a {
-  color: #a795ef;
+  color: #00bcd4;
 }
 
 .copyurl {
@@ -101,7 +109,7 @@ div.input label {
 
 .addon button:hover {
   background: #FFF;
-  color: #a795ef;
+  color: #00bcd4;
 }
 
 div.hr {
@@ -112,7 +120,7 @@ div.hr {
 }
 
 a.button {
-  border: 2px solid #a795ef;
+  border: 2px solid #00bcd4;
   font-weight: bold;
   margin: 0;
   border-radius: 3px;
@@ -123,6 +131,14 @@ a.button {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   background-color: #FFF;
   transition: box-shadow 0.1s linear;
+}
+
+.nav-wrapper {
+  padding: 0rem 2rem;
+}
+
+.brand-logo {
+  font-family: 'Bowlby One SC', cursive;
 }
 
 a.button:hover {
@@ -136,7 +152,7 @@ a.button:hover {
   border: 1px solid #CCC;
   /*height: 500px;
   width: 320px;*/
-  height: 90vh;
+  height: 100%;
   width: 100%;
   /*margin: 2rem auto;*/
   display: flex;
@@ -217,14 +233,14 @@ a.button:hover {
   background: none;
   border: 0;
   cursor: pointer;
-  color: blue;
+  color: #00bcd4;
   font-weight: bold;
 }
 
 #message_window form {
   display: flex;
   margin: 0;
-  padding: 0.25rem;
+  padding: 0.25rem 2rem;
 }
 
 #message_window #message_template {
@@ -279,7 +295,7 @@ a.button:hover {
 
 #message_window .message.outgoing {
   float: right;
-  background: #a795ef;
+  background: #00bcd4;
   color: white;
 }
 
@@ -306,8 +322,8 @@ a.button:hover {
 #message_window #message_replies a {
   text-decoration: none;
   display: block;
-  border: 1px solid #a795ef;
-  color: #a795ef;
+  border: 1px solid #00bcd4;
+  color: #00bcd4;
   border-radius: 16px;
   padding: 0.25rem 1rem;
   font-size: 14px;
@@ -315,7 +331,7 @@ a.button:hover {
 }
 
 #message_window #message_replies a:hover {
-  background: #a795ef;
+  background: #00bcd4;
   color: #FFF;
 }
 

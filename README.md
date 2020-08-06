@@ -1,10 +1,9 @@
-# Botkit Starter Kit
+# Movie Chatbot 
 
-This is a Botkit starter kit for web, created with the [Yeoman generator](https://github.com/howdyai/botkit/tree/master/packages/generator-botkit#readme).
+The Movie Chatbot is a chatbot created using botkit. This application allows users to communicate with the chatbot to find movie data. It utilizes the online movie database API to fetch movie data to relay to the user as directed. 
 
-To complete the configuration of this bot, make sure to update the included `.env` file with your platform tokens and credentials.
+Check out the deployed site [here](https://chat-b-o-t.herokuapp.com/#)!
 
-[Botkit Docs](https://botkit.ai/docs/v4)
 
-This bot is powered by [a folder full of modules](https://botkit.ai/docs/v4/core.html#organize-your-bot-code). 
-Edit the samples, and add your own in the [features/](features/) folder.
+
+

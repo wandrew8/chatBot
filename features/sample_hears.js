@@ -65,7 +65,7 @@ module.exports = async function(controller) {
                     setTimeout(async () => {
                         await bot.changeContext(message.reference);
                     bot.reply(message, {
-                        text: `<h2>${data.Title} | ${data.Year} | ${data.Rated}</h2> <br> ${data.Plot} <br><br> ${data.Production} | ${data.Runtime} | ${data.Country}<br>`,
+                        text: `<h4>${data.Title} | ${data.Year} | ${data.Rated}</h4> <br> ${data.Plot} <br><br> ${data.Production} | ${data.Runtime} | ${data.Country}<br>`,
                         files: [
                           {
                             image: true,
@@ -74,6 +74,7 @@ module.exports = async function(controller) {
                           },
                         ],
                       });
+                    bot.reply(message, `Learn more <a href="https://en.wikipedia.org/wiki/${data.Title}" target="_blank">here</a>`)
                     }, 1000);
 
                       bot.reply(message, {type: 'typing'});

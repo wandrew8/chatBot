@@ -3,10 +3,40 @@
         <title>Botkit Anywhere</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.4/dist/showdown.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="/css/styles.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body >
+      <div id="modal1" class="modal modal1">
+        <div class="modal-content">
+          <h4 class="center-align">Welcome!</h4>
+          <h5 class="center-align">The Movie Chatbot</h5>
+          <p class="center-align">Type "Hello" in the messanger below to start a conversation and learn more about any of the movies in the Online Movie Database</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close btn-flat">Let's Start</a>
+        </div>
+      </div>
+      <div id="modal2" class="modal modal2">
+        <div class="modal-content">
+          <h4 class="center-align">Welcome!</h4>
+          <h5 class="center-align">The Movie Chatbot</h5>
+          <p class="center-align">Type "Hello" in the messanger below to start a conversation and learn more about any of the movies in the Online Movie Database</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close btn-flat">Let's Start</a>
+        </div>
+      </div>
+      <nav>
+        <div class="cyan nav-wrapper">
+          <a href="#" class="brand-logo px-5">Movie Chatbot</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="howToUseModalButton modal-trigger" href="#modal2">How To Use</a></li>
+          </ul>
+        </div>
+      </nav>
       <div class="wrapper">
 
         <div id="message_window">
@@ -53,11 +83,13 @@
             <footer>
                 <form onsubmit="Botkit.send(Botkit.input.value, event)">
                     <input type="text" autocomplete="off" id="messenger_input" placeholder="Type here..." />
-                    <button type="submit">Send</button>
+                    <button class="cyan-text" type="submit">Send</button>
                 </form>
             </footer>
         </div>
         </div>
-        <script src="/client.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./client.js"></script>
+        <script src="./app.js"></script>
     </body>
 </html>
